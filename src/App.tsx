@@ -4,29 +4,30 @@ interface appProps {
   color?: string
 }
 interface appState{
-  counter:number
+  counter:number,
 }
 
 class App extends Component<appProps,appState>{
   constructor(props:appProps){
     super(props)
     this.state = {
-      counter: 0
+      counter: 0,
     }
   }
  
-  increament =()=>{
+  increament =():void=>{
     this.setState({counter:this.state.counter + 1})
   }
-  decreament = () =>{
+  decreament = ():void =>{
     this.setState({counter:this.state.counter -1})
   }
+
   render() {
     return (
       <>
-        <button onClick={this.increament}>Increament Counter</button>
-        <button onClick={this.decreament}>Increament Counter</button>
-        {this.state.counter}
+        <button onClick={this.increament}>Increament Counter</button><br/><br/>
+        <button onClick={this.decreament}>Increament Counter</button><br/>
+        {this.state.counter}<br/><br/>
       </>
     )
   }
