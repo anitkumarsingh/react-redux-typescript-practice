@@ -1,35 +1,10 @@
-import { Component } from 'react';
+import Main from './router';
 
-interface appProps {
-  color?: string
-}
-interface appState{
-  counter:number,
+
+const App = () => {
+  return (
+    <Main />
+  )
 }
 
-class App extends Component<appProps,appState>{
-  constructor(props:appProps){
-    super(props)
-    this.state = {
-      counter: 0,
-    }
-  }
- 
-  increament =():void=>{
-    this.setState({counter:this.state.counter + 1})
-  }
-  decreament = ():void =>{
-    this.setState({counter:this.state.counter -1})
-  }
-
-  render() {
-    return (
-      <>
-        <button onClick={this.increament}>Increament Counter</button><br/><br/>
-        <button onClick={this.decreament}>Increament Counter</button><br/>
-        {this.state.counter}<br/><br/>
-      </>
-    )
-  }
-}
 export default App;
